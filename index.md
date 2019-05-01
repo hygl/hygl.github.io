@@ -4,7 +4,7 @@
 
 layout: default
 ---
-
+[About me](about.md)
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
