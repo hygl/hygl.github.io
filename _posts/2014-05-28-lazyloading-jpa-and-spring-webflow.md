@@ -1,7 +1,6 @@
 ---
 layout: post
 category : spring
-tags : [spring, webflow, jpa]
 ---
 When I did a code review recently in some of our projects I found a lot of calls of `Hibernate.initialze()` to get rid of lazy loading problems when using hibernate as a jpa provider. Despite of using the `OpenEntitymanagerInViewFilter` lazy loading somehow did not seem to work, so the developers did it by hand. I disliked the solution, because there was a lot of code that did not solve any domain problem and was specific to the jpa provider.
 

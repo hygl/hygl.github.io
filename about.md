@@ -1,10 +1,9 @@
 ---
-layout: default
+layout: page
 title: About
 permalink: /about/
 description: Philipp Hügelmeyer is an IT Archtitect at the Fedral Office for Agriculture and Food (BLE) in Bonn, Germany. He is interested in Container, DevOps, FaaS, AI, and Blockchain.
 ---
-[home](index.md)
 
 Philipp Hügelmeyer is an IT Archtitect at the [Fedral Office for Agriculture and Food (BLE)](http://www.ble.de) in Bonn, Germany. He is interested in Container, DevOps, FaaS, AI, and Blockchain.
 
