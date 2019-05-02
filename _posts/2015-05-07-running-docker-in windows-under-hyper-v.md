@@ -1,6 +1,6 @@
 ---
 layout: post
-category: spring
+categories: [docker,spring]
 ---
 Docker can be run quite stable and easy under windows 8. At first install [msysgit](https://msysgit.github.io/) and launch a bash shell. Get the latest Version of the [docker](http://www.docker.com)  client and [docker-machine](https://docs.docker.com/machine/) by pasting the next two commands:
 

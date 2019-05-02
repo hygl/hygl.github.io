@@ -1,6 +1,6 @@
 ---
 layout: post
-category: spring
+categories: [spring,docker]
 ---
 [Spring Boot](http://projects.spring.io/spring-boot/) makes it easy to build [microservices](http://martinfowler.com/articles/microservices.html). Containers are a standard way to run microservices in production.
 
