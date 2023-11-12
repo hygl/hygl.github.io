@@ -1,20 +1,35 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
 ---
 
-<Layout
-	title="Über mich"
-	description="Curriculum Vitae"
-	pubDate={new Date('November 02 2023')}
-	heroImage="/blog-placeholder-about.jpg"
->
-	<p>
-		Mein Name ist Philipp Hügelmeyer, ich habe an der Universität Osnabrück Computerlinguistik und künstliche Intelligenz, 
-		Informatik und Philiosophie studiert und mit 2002 Magister abgeschlossen. Seitdem habe ich unter anderem beim Fraunhofer 
-		Insitiut für intelligente Analyse- und Informationssysteme, dem Bundesamt für Sicherheit in der Informatikstechnik und
-		der Uni Osnabrück gearbeitet. 
-	</p>
-	<p>
-		Seit 2009 bin ich bei der Bundesanstalt für Landwirtschaft und Ernährung als Architekt in der IT tätig.
-	</p>
-</Layout>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={"Über mich"} description={"Curriculum Vitae"} />
+	</head>
+	<body>
+		<Header title={"Über mich"} />
+		<main>
+			<h1>Über mich</h1>
+			<FormattedDate date={new Date("12.11.2023")} />
+		
+			<p>
+				Mein Name ist Philipp Hügelmeyer, ich habe an der Universität
+				Osnabrück Computerlinguistik und künstliche Intelligenz,
+				Informatik und Philiosophie studiert und mit 2002 Magister
+				abgeschlossen. Seitdem habe ich unter anderem beim Fraunhofer
+				Insitiut für intelligente Analyse- und Informationssysteme, dem
+				Bundesamt für Sicherheit in der Informatikstechnik und der Uni
+				Osnabrück gearbeitet.
+			</p>
+			<p>
+				Seit 2009 bin ich bei der Bundesanstalt für Landwirtschaft und
+				Ernährung als Architekt in der IT tätig.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
