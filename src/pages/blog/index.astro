@@ -3,13 +3,15 @@ import BaseHead from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection, getDataEntryById } from 'astro:content';
+import { getCollection } from 'astro:content';
 import FormattedDate from '../../components/FormattedDate.astro';
+import { getTitle, getDateString , getDate} from '../../../public/helper';
+import Hamburger from '../../components/Hamburger.astro';
+
 
 const posts = (await getCollection('blog')).sort(
-	(a, b) => new Date(b.id.substring(0,10)).valueOf() - new Date(a.id.substring(0,10)).valueOf());
+	(a, b) => getDateString(b.id) - getDateString(a.id));
 ---
-
 <!doctype html>
 <html lang="en">
 	<head>
@@ -87,12 +89,13 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
+			<Hamburger/>
 			<section>
 					{
 						posts.map((post) => (
 								<a href={`/blog/${post.slug}/`}>
-									<h4 class="title">{post.data.title?post.data.title:post.id.replaceAll("-"," ").substring(11,post.id.lastIndexOf("."))}</h4></a>
-									<FormattedDate date={new Date(post.id.substring(0,10))} />
+									<h4 class="title">{post.data.title?post.data.title:getTitle(post.id)}</h4></a>
+									<FormattedDate date={getDate(post.id)} />
 						))
 					}
 				
