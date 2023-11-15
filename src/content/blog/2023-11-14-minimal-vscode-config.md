@@ -54,6 +54,10 @@ Im Moment sieht meine Config so aus:
     "editor.minimap.enabled": false, // 
     "editor.fontLigatures": false, // disable font ligatures
     "workbench.settings.editor": "json", // Default edit config in json Editor 
-    "telemetry.telemetryLevel": "off" // Do not send telemetry
+    "telemetry.telemetryLevel": "off", // Do not send telemetry
+    "window.commandCenter": false, //Disable Command Center
+    "workbench.layoutControl.enabled": false, //no layout controll 
+    "workbench.editor.showTabs": "none" // no tabs
+}
 }
 ```
