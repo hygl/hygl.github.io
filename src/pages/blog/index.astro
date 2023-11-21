@@ -1,17 +1,18 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-import { getTitle, getDateString , getDate} from '../../../public/helper';
-import Hamburger from '../../components/Hamburger.astro';
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import { getTitle, getDateString, getDate } from "../../../public/helper";
+import Hamburger from "../../components/Hamburger.astro";
 
-
-const posts = (await getCollection('blog')).sort(
-	(a, b) => getDateString(b.id) - getDateString(a.id));
+const posts = (await getCollection("blog")).sort(
+	(a, b) => getDateString(b.id) - getDateString(a.id),
+);
 ---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -89,17 +90,48 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<Hamburger/>
-			<section>
-					{
-						posts.map((post) => (
-								<a href={`/blog/${post.slug}/`}>
-									<h4 class="title">{post.data.title?post.data.title:getTitle(post.id)}</h4></a>
-									<FormattedDate date={getDate(post.id)} />
-						))
-					}
-				
-			</section>
+			<Hamburger />
+			<div class="grid auto-rows-[192px] grid-cols-3 gap-4">
+				{
+					posts.map((post) => (
+						<div
+							class={`row-span-1 rounded-xl border-2 border-slate-400/10 p-4 dark:bg-neutral-900 ${
+								post.data.title?.length &&
+								post.data.title?.length > 32 &&
+								"col-span-2  bg-orange-300"
+							} ${
+								post.data.title?.length &&
+								post.data.title?.length > 24 &&
+								post.data.title?.length <= 32 &&
+								" bg-blue-400"
+							} ${
+								post.data.title?.length &&
+								post.data.title?.length > 10 &&
+								post.data.title?.length <= 24 &&
+								" bg-yellow-200"
+							} {post.data.title?.length && post.data.title?.length  > 32 &&  "col-span-2  bg-orange-300"} ${
+								post.data.title?.length &&
+								post.data.title?.length > 24 &&
+								post.data.title?.length <= 32 &&
+								" bg-blue-400"
+							} ${
+								!post.data.title?.length &&
+								getTitle(post.id).length > 16 &&
+								"bg-green-200"
+							}`}
+						>
+							<a href={`/blog/${post.slug}/`}>
+								<h4 class="title">
+									{post.data.title
+										? post.data.title
+										: getTitle(post.id)}
+								</h4>
+							</a>
+							<FormattedDate date={getDate(post.id)} />
+						</div>
+					))
+				}
+			</div>
 		</main>
 		<Footer />
 	</body>
