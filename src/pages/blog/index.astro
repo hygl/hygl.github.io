@@ -91,7 +91,7 @@ const posts = (await getCollection("blog")).sort(
 		<Header />
 		<main>
 			<Hamburger />
-			<div class="grid auto-rows-[192px] grid-cols-3 gap-4">
+			<div class="grid auto-rows-[192px] md:grid-cols-3 gap-4">
 				{
 					posts.map((post) => (
 						<div
@@ -121,11 +121,11 @@ const posts = (await getCollection("blog")).sort(
 							}`}
 						>
 							<a href={`/blog/${post.slug}/`}>
-								<h4 class="title">
+								<p class="title">
 									{post.data.title
 										? post.data.title
 										: getTitle(post.id)}
-								</h4>
+								<p>
 							</a>
 							<FormattedDate date={getDate(post.id)} />
 						</div>
