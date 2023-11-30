@@ -4,7 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-
+import Hamburger from '../components/Hamburger.astro';
 type Props = CollectionEntry<'blog'>;
 
 const { id,slug,body,collection,data} = Astro.props;
@@ -14,42 +14,72 @@ const { id,slug,body,collection,data} = Astro.props;
 	<head>
 		<BaseHead title={data.title?data.title:id.replaceAll("-"," ").substring(11,id.lastIndexOf("."))} description="" />
 		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
+		main {
+				width: 960px;
 			}
-			.hero-image {
+			ul {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 2rem;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+			}
+			ul li {
+				width: calc(50% - 1rem);
+			}
+			ul li * {
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
+			ul li:first-child {
+				width: 100%;
+				margin-bottom: 1rem;
+				text-align: center;
+			}
+			ul li:first-child img {
 				width: 100%;
 			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
+			ul li:first-child .title {
+				font-size: 2.369rem;
 			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
+			ul li img {
+				margin-bottom: 0.5rem;
+				border-radius: 12px;
+			}
+			ul li a {
+				display: block;
 			}
 			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
+				margin: 0;
+				color: rgb(var(--black));
 				line-height: 1;
 			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
 			.date {
-				margin-bottom: 0.5em;
+				margin: 0;
 				color: rgb(var(--gray));
 			}
-			.last-updated-on {
-				font-style: italic;
+			ul li a:hover h4,
+			ul li a:hover .date {
+				color: rgb(var(--accent));
+			}
+			ul a:hover img {
+				box-shadow: var(--box-shadow);
+			}
+			@media (max-width: 720px) {
+				ul {
+					gap: 0.5em;
+				}
+				ul li {
+					width: 100%;
+					text-align: center;
+				}
+				ul li:first-child {
+					margin-bottom: 0;
+				}
+				ul li:first-child .title {
+					font-size: 1.563em;
+				}
 			}
 		</style>
 	</head>
@@ -57,6 +87,7 @@ const { id,slug,body,collection,data} = Astro.props;
 	<body>
 		<Header />
 		<main>
+			<Hamburger/>
 			<article>
 				<div class="prose">
 					<div class="title">
