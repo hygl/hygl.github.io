@@ -17,15 +17,51 @@ const posts = (await getCollection("blog")).sort(
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.container {
+				display: grid;
+ 				grid-template-columns: 1fr 1fr 1fr;
+				gap: 10px;
+			}
+			.item {
+				background: #7375e0;
+				text-align: center;
+				border-radius: 10px;
+			}
+			
+			.bigitem {
+				grid-column: span 2;
+				align-content: center;
+				text-align: center;
+				border-radius: 10px;
+			}
+
+			.largeitem {
+				grid-row: span 2;
+				background:  #ff9776;
+				text-align: center;
+				border-radius: 10px;
+			}
+
+			@media (max-width: 720px) {
+			.container {
+				display: grid;
+ 				grid-template-columns: 1fr;
+				gap: 10px;
+			}
+}
+
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
 			<Hamburger />
-			<div>
+			<div class="container">
 				{
 					posts.map((post) => (
-						<div>
+						<div class={`${(post.data.title? post.data.title.length
+										: getTitle(post.id).length)>25 ?'largeitem':'item'}`}>
 							<a href={`/blog/${post.slug}/`}>
 								<p class="title">
 									{post.data.title
