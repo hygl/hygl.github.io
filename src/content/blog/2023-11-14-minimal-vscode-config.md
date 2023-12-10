@@ -6,9 +6,9 @@ Nachdem ich in letzter Zeit viel mit helix, vim und neovim *rumgespielt* habe, b
 
 Fehlende Sprachunterstützung kann einfach durch Plugins wie zum Beispiel für [Java](https://code.visualstudio.com/docs/languages/java) nachgerüstet werden und auch sonst lässt sich der Edior mittlerweile gut anpassen. So gibt es eine Menge [Farbschemata](https://vscodethemes.com/), ich verwende zum Beispiel [haki neosolarized V3](https://vscodethemes.com/e/mathstylish.tokyo-dark-themes/haki-neosolarized-v2?language=javascript), dass hier leider nicht abgebildet ist.
 
-VS Code enthält allerdings auch jede Menge GUI, die man nicht benötigt, wenn man die [Tastaturkurzbefehle](https://code.visualstudio.com/docs/getstarted/keybindings) beherrscht. Zum Glück kann man viele dieser Feature abstellen. Ich habe mit [dieser Konfiguration](https://medium.com/@marciobarrios/minimal-user-interface-for-visual-studio-code-2ab849eb6d8e) angefangen, und dieses dann an meine Bedürfnisse angepasst. Meine Config sieht nun so aus, das ist zwar mehr als bei Helix, lässt sich aber gut zwischen verschiedenen [Editoren synchen](https://code.visualstudio.com/docs/editor/settings-sync). 
+VS Code enthält allerdings auch jede Menge GUI, die man nicht benötigt, wenn man die [Tastaturkurzbefehle](https://code.visualstudio.com/docs/getstarted/keybindings) beherrscht. Zum Glück kann man viele dieser Feature abstellen. Ich habe mit [dieser Konfiguration](https://medium.com/@marciobarrios/minimal-user-interface-for-visual-studio-code-2ab849eb6d8e) angefangen, und dieses dann an meine Bedürfnisse angepasst. Meine Config sieht nun so aus, das ist zwar mehr als bei Helix, lässt sich aber gut zwischen verschiedenen [Editoren synchen](https://code.visualstudio.com/docs/editor/settings-sync).
 
-Im Moment sieht meine Config so aus: 
+Im Moment sieht meine Config so aus:
 
 ```json
 {
@@ -58,6 +58,5 @@ Im Moment sieht meine Config so aus:
     "window.commandCenter": false, //Disable Command Center
     "workbench.layoutControl.enabled": false, //no layout controll 
     "workbench.editor.showTabs": "none" // no tabs
-}
 }
 ```
