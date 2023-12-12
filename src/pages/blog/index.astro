@@ -14,43 +14,35 @@ const posts = (await getCollection("blog")).sort(
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="de">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
 			.container {
 				display: grid;
- 				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-columns: 1fr 1fr 1fr;
 				gap: 10px;
 			}
-			.item {
-				background: #7375e0;
-				text-align: center;
-				border-radius: 10px;
-			}
-			
-			.bigitem {
-				grid-column: span 2;
-				align-content: center;
-				text-align: center;
-				border-radius: 10px;
+			.dateitem {
+				text-align: right;
 			}
 
-			.largeitem {
-				grid-row: span 2;
-				background:  #ff9776;
-				text-align: center;
-				border-radius: 10px;
+			.textitem {
+				grid-column: span 2;
+				text-align: left;
 			}
 
 			@media (max-width: 720px) {
-			.container {
-				display: grid;
- 				grid-template-columns: 1fr;
-				gap: 10px;
-			}
-}
+				.container {
+					display: grid;
+					grid-template-columns: 0.5fr 0.5fr  1fr;
+					gap: 10px;
+				}
 
+				.textitem {
+					text-align: left;
+				}
+			}
 		</style>
 	</head>
 	<body>
@@ -60,17 +52,18 @@ const posts = (await getCollection("blog")).sort(
 			<div class="container">
 				{
 					posts.map((post) => (
-						<div class={`${(post.data.title? post.data.title.length
-										: getTitle(post.id).length)>25 ?'largeitem':'item'}`}>
-							<a href={`/blog/${post.slug}/`}>
-								<p class="title">
+						<>
+							<div class="textitem">
+								<a href={`/blog/${post.slug}/`}>
 									{post.data.title
 										? post.data.title
 										: getTitle(post.id)}
-								<p>
-							</a>
-							<FormattedDate date={getDate(post.id)} />
-						</div>
+								</a>
+							</div>
+							<div class="dateitem">
+								<FormattedDate date={getDate(post.id)} />
+							</div>
+						</>
 					))
 				}
 			</div>
