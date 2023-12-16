@@ -47,7 +47,7 @@ const tags = [...new Set(posts.map((post) => post.data.categories).flat())].sort
 		<main>
 			<Hamburger />
             <h1>Tags</h1>
-            <div>{tags.map((tag) => <a href={`tags/${tag}`}>{tag}</a><br/>)}</div>
+            <div>{tags.map((tag) => <a href={`${tag}`}>{tag}</a><br/>)}</div>
 		</main>
 		<Footer />
 	</body>
