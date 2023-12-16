@@ -40,6 +40,23 @@ const tags = [...new Set(posts.map((post) => post.data.categories).flat())].sort
 					text-align: left;
 				}
 			}
+			a {
+    			color: #00539F;
+ 			 }
+
+  			.tags {
+				  flex-wrap: wrap;
+				  display: flex;
+				  
+				}
+  	.tag {
+		  margin: 0.25em;
+		  border: dotted 1px #a1a1a1;
+		  border-radius: .5em;
+		  padding: .5em 1em;
+		  font-size: 1.15em;
+		  background-color: #F8FCFD;
+ 		 }
 		</style>
 	</head>
 	<body>
@@ -47,7 +64,7 @@ const tags = [...new Set(posts.map((post) => post.data.categories).flat())].sort
 		<main>
 			<Hamburger />
             <h1>Tags</h1>
-            <div>{tags.map((tag) => <a href={`${tag}`}>{tag}</a><br/>)}</div>
+            <div class="tags">{tags.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}</div>
 		</main>
 		<Footer />
 	</body>

@@ -1,36 +1,69 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import Hamburger from '../components/Hamburger.astro';
-type Props = CollectionEntry<'blog'>;
+import type { CollectionEntry } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+import Hamburger from "../components/Hamburger.astro";
+type Props = CollectionEntry<"blog">;
 
-const { id,data} = Astro.props;
+const { id, data } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="de">
-	<head>
-		<BaseHead title={data.title?data.title:id.replaceAll("-"," ").substring(11,id.lastIndexOf("."))} description="" />
-	</head>
+  <head>
+    <BaseHead
+      title={data.title
+        ? data.title
+        : id.replaceAll("-", " ").substring(11, id.lastIndexOf("."))}
+      description=""
+    />
+	<style>
+		a {
+    			color: #00539F;
+ 			 }
 
-	<body>
-		<Header />
-		<main>
-			<Hamburger/>
-			<article>
-				<div class="prose">
-					<div class="title">
-						<h1>{data.title?data.title:id.replaceAll("-"," ").substring(11,id.lastIndexOf("."))}</h1>
-						<FormattedDate date={new Date(id.substring(0,10))} />
-						<hr />
-					</div>
-					<slot />
-				</div>
-			</article>
-		</main>
-		<Footer />
-	</body>
+  			.tags {
+				  flex-wrap: wrap;
+				  display: flex;
+				  
+				}
+  	.tag {
+		  margin: 0.05em;
+		  border: dotted 1px #a1a1a1;
+		  border-radius: .5em;
+		  padding: .25em 1em;
+		  font-size: 1.15em;
+		  background-color: #F8FCFD;
+ 		 }
+
+	</style>
+
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <Hamburger />
+      <article>
+        <div class="prose">
+          <div class="title">
+            <h1>
+              {
+                data.title
+                  ? data.title
+                  : id.replaceAll("-", " ").substring(11, id.lastIndexOf("."))
+              }
+            </h1>
+            <FormattedDate date={new Date(id.substring(0, 10))} />
+            <hr />
+          </div>
+		  <div class="tags">{data.categories.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}</div>
+		  <slot />
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
 </html>
