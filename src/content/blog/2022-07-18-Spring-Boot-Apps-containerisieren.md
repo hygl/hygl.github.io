@@ -1,6 +1,6 @@
 ---
 title: Spring Boot Apps containisieren
-category: Spring, Docker, K8s
+categories: [Spring, Docker, K8s]
 ---
 
 In diesem Artikel geht es darum, eine bestehende Spring Boot Anwendung, die schon als jar vorliegt, zu containerisieren.

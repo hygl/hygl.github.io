@@ -1,6 +1,6 @@
 ---
 title: "Neuer Blog"
-catrgories: [astro]
+categories: [astro]
 ---
 In der letzten Zeit habe ich meinen Blog hier gelöscht und habe dann von ganz neu angefangen, die Seite aufzubauen. Ich wollte verstehen, wie alles funktioniert und habe deswegen nicht mehr auf [Jekyll](https://jekyllrb.com/), sondern auf [astro](https://astro.build/) gesetzt.
 

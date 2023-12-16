@@ -1,0 +1,55 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import Hamburger from "../../components/Hamburger.astro";
+
+const posts = (await getCollection("blog"))
+const tags = [...new Set(posts.map((post) => post.data.categories).flat())].sort();
+---
+
+<!doctype html>
+<html lang="de">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.container {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 10px;
+			}
+			.dateitem {
+				text-align: right;
+			}
+
+			.textitem {
+				grid-column: span 2;
+				text-align: left;
+			}
+
+			@media (max-width: 720px) {
+				.container {
+					display: grid;
+					grid-template-columns: 0.5fr 0.5fr  1fr;
+					gap: 10px;
+				}
+
+				.textitem {
+					text-align: left;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<Hamburger />
+            <h1>Tags</h1>
+            <div>{tags.map((tag) => <a href={`tags/${tag}`}>{tag}</a><br/>)}</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+

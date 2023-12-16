@@ -1,0 +1,86 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import Hamburger from "../../components/Hamburger.astro";
+import { getDate, getTitle } from "../../../public/helper";
+import FormattedDate from "../../components/FormattedDate.astro";
+
+export async function getStaticPaths() {
+
+  const posts = (await getCollection("blog"))
+  const tags = [...new Set(posts.map((post) => post.data.categories).flat())]
+
+
+  return tags.map((tag) => {
+    return {
+      params: { tag },
+      props: { posts: posts.filter((post) => post.data.categories.includes(tag)) },
+    };
+  });
+} 
+
+const {tag} = Astro.params;
+const posts = (await getCollection("blog"))
+const filteredPosts = posts.filter((post) => post.data.categories.includes(tag));
+
+---
+
+<!doctype html>
+<html lang="de">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.container {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				gap: 10px;
+			}
+			.dateitem {
+				text-align: right;
+			}
+
+			.textitem {
+				grid-column: span 2;
+				text-align: left;
+			}
+
+			@media (max-width: 720px) {
+				.container {
+					display: grid;
+					grid-template-columns: 0.5fr 0.5fr  1fr;
+					gap: 10px;
+				}
+
+				.textitem {
+					text-align: left;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<Hamburger />
+      <p>Posts tagged with {tag}</p>
+	  <div class="container">
+
+        {filteredPosts.map((post) => 
+			<div class="textitem">
+								<a href={`/blog/${post.slug}/`}>
+									{post.data.title
+										? post.data.title
+										: getTitle(post.id)}
+								</a>
+							</div>
+							<div class="dateitem">
+								<FormattedDate date={getDate(post.id)} />
+							</div>
+		)}
+	  </div>
+	</main>
+		<Footer />
+	</body>
+</html>

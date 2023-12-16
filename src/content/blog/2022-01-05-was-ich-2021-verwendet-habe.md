@@ -1,5 +1,5 @@
 ---
-category: hardware, software
+categories: [hardware, software]
 title: "Was ich 2021 verwendet habe"
 ---
 Auch in 2021 habe ich die meiste Zeit im Homeoffice verbraucht. Das bedeutete viele Teefonate und Videokonferenzen.

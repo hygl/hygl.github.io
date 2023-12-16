@@ -1,6 +1,6 @@
 ---
 title: "VS Code Java download Sources und JavaDoc"
-categories: ["Editor", VS Code","Java","Maven"]
+categories: ["Editor", "VS Code","Java","Maven"]
 ---
 Damit in VS Code beim Maven Projekten Sources und JavaDoc heruntergeladen werden, müssen an zwei verschiedenen Stellen Konfigurationen votgenommen werden.
 

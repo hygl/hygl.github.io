@@ -1,6 +1,6 @@
 ---
 title: "Minimale VS Code Konfiguration"
-categories: ["Editor", VS Code"]
+categories: ["Editor", "VS Code"]
 ---
 Nachdem ich in letzter Zeit viel mit helix, vim und neovim *rumgespielt* habe, bin ich doch immer wieder zu vs code zurückgekehrt, weil der editor einfahc funktioniert und nicht so viel Konfiguration erfordert.
 
