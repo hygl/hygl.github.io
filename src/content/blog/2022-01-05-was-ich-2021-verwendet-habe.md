@@ -11,6 +11,6 @@ Ich habe jetzt zum Ende des Jahres abgespeckt, das iPad abgegeben, den Rechner g
 * [Jabra Evolve2 30](https://www.jabra.com.de/business/office-headsets/jabra-evolve/jabra-evolve2-30##23089-999-979) - On Ear Headset, dass angenehm auch über längere Zeit zu tragen ist und UC Untersützung hat.
 * [Logitech MX Keys](https://www.logitech.com/de-de/products/keyboards/mx-keys-wireless-keyboard.html) - Das beste Keyboad seit meiner Model-M Pfase im Studium.
 * [Logitech M705 Marathon Maus](https://www.logitech.com/de-de/products/mice/m705-wireless-mouse.910-001949.html) - Angenehme Maus, die lange läuft.
-* [Logitech C920 HD Webcam](https://www.logitech.com/de-de/products/webcams/c920-pro-hd-webcam.960-001055.html) - Vernünftige Webcam, 4k würde über Webex oder Teams eh wieder komprimiert. 
+* [Logitech C920 HD Webcam](https://www.logitech.com/de-de/products/webcams/c920-pro-hd-webcam.960-001055.html) - Vernünftige Webcam, 4k würde über Webex oder Teams eh wieder komprimiert.
 
-**Update**: Da es ja jetzt bei uns so langsam wieder ins Büro geht und ich die gestellten kabelgebundenen Mäuse und Tastaturen bestimmt nicht mehr ertragen kann, werde ich einfach all diese Sachen im Rucksack mitnehmen, um überall meine Arbeitswerkzeuge zur Verfügung zu haben. Alles passt gut in meine Ikea Rucksack oder in meine Fahrradtasche und wird auf dem Fahrrad mitgenommen. 
+**Update**: Da es ja jetzt bei uns so langsam wieder ins Büro geht und ich die gestellten kabelgebundenen Mäuse und Tastaturen bestimmt nicht mehr ertragen kann, werde ich einfach all diese Sachen im Rucksack mitnehmen, um überall meine Arbeitswerkzeuge zur Verfügung zu haben. Alles passt gut in meine Ikea Rucksack oder in meine Fahrradtasche und wird auf dem Fahrrad mitgenommen.
