@@ -1,25 +1,28 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import Hamburger from '../components/Hamburger.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Hamburger from "../components/Hamburger.astro";
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<Hamburger />
-			<h1>Hallo Welt!</h1>
-			<p>
-				Dies ist die Homepage von Philipp Hügelmeyer. Hier finden sich <a href="/blog">Blogposts</a>.
-			</p>	
-		</main>
-		<Footer />
-	</body>
+<html lang="de">
+  <head>
+    <link href="https://social.tchncs.de/@hygl" rel="me" />
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <Hamburger />
+      <h1>Hallo Welt!</h1>
+      <p>
+        Dies ist die Homepage von Philipp Hügelmeyer. Hier finden sich <a
+          href="/blog">Blogposts</a
+        >.
+      </p>
+    </main>
+    <Footer />
+  </body>
 </html>
