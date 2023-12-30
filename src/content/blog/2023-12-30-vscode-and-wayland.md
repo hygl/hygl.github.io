@@ -9,3 +9,8 @@ Der Grund dafür ist, dass die Anwendung standardmäßig als X Anwendung ausgef�
 ```sh
 alias code="code --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto"
 ```
+
+Als Fehler trat dann noch auf, dass ein *normales* Fenster seine Knöpfe (Minimieren, Maximieren, Schließen) rechts gezeigt hat und VS Code links. Ich vermute, das lag daran, dass kein Default gesetzt war und GTK und Electron einen unterschiedlichen angenommen haben. Nachdem ich die Knöpfe mit [GNOME Tweaks](https://gitlab.gnome.org/GNOME/gnome-tweaks) einmal nach links und wieder nach rechts geschoben habe, werden sie nun konsistent rechts angezeigt. 
+
+Um zu verstehen,  warum GTK/GNOME sich nicht selber um das Zeichnen der Fenster kümmert, hat mir dieser [Thread](https://gitlab.gnome.org/GNOME/mutter/-/issues/217) geholfen
+
