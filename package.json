@@ -10,11 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/mdx": "^4.0.0-beta.1",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.0.0-beta.2",
     "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.1.6",
-    "astro": "^5.0.0-beta.1",
+    "@astrojs/sitemap": "^3.2.0",
+    "astro": "^5.0.0-beta.3",
     "typescript": "^5.2.2"
   }
 }
