@@ -15,6 +15,12 @@
     "@astrojs/rss": "^4.0.9",
     "@astrojs/sitemap": "^3.2.1",
     "astro": "^5.0.0-beta.8",
+    "html-to-text": "^9.0.5",
+    "markdown-it": "^14.1.0",
     "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/html-to-text": "^9.0.4",
+    "@types/markdown-it": "^14.1.2"
   }
 }

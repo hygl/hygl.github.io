@@ -1,0 +1,103 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+import { getTitle, getDateString, getDate } from "../../public/helper";
+import Hamburger from "../components/Hamburger.astro";
+import { any } from "astro:schema";
+import type {
+    InferGetStaticParamsType,
+    InferGetStaticPropsType,
+    GetStaticPaths,
+} from "astro";
+import MarkdownIt from "markdown-it";
+import { createExcerpt } from "../utils/create-expert";
+
+export const getStaticPaths = (async ({ paginate }) => {
+    const posts = (await getCollection("blog")).sort(
+        (a, b) => getDateString(b.id) - getDateString(a.id),
+    );
+    return paginate(posts, { pageSize: 4 });
+}) satisfies GetStaticPaths;
+
+type Params = InferGetStaticParamsType<typeof getStaticPaths>;
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page } = Astro.props;
+---
+
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+        .container {
+            gap: 10px;
+        }
+
+        @media (max-width: 720px) {
+            .container {
+                display: grid;
+                grid-template-columns: 0.5fr 0.5fr 1fr;
+                gap: 10px;
+            }
+        }
+
+        .paging {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        .paging.p {
+            grid-column: span 1;
+        }
+        .full-width-element {
+            width: 100%; /* Das Element nimmt die gesamte Breite des Containers ein */
+        }
+    </style>
+</head>
+<body>
+    <Header />
+    <main>
+        <Hamburger />
+        <div class="container">
+            {
+                page.data.map((post) => (
+                    <>
+                        <div class="full-width-element">
+                            <h2>
+                                <a href={`${post.slug}/`}>
+                                    {post.data.title
+                                        ? post.data.title
+                                        : getTitle(post.id)}
+                                </a>
+                            </h2>
+                            <FormattedDate date={getDate(post.id)} />
+
+                            <p>
+                                {createExcerpt(post.body).substring(0, 300)}...
+                            </p>
+                        </div>
+                    </>
+                ))
+            }
+        </div>
+        <div class="paging">
+            <p><a href="/1">&lt;&lt;Anfang</a></p>
+
+            <p>
+                {
+                    page.url.prev && page.currentPage > 1 && (
+                        <a href={page.url.prev}>&lt;Vorherige Seite</a>
+                    )
+                }
+            </p>
+            <p>
+                {page.url.next && <a href={page.url.next}>Nächste Seite&gt;</a>}
+            </p>
+        </div>
+    </main>
+
+    <Footer />
+</body>

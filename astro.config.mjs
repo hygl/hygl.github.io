@@ -4,5 +4,8 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://hygl.github.io',
-  integrations: [sitemap()]
+  integrations: [sitemap()],
+  redirects: {
+    '/': '/1'
+  }
 });
