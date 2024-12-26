@@ -69,7 +69,7 @@ const filteredPosts = posts.filter((post) => post.data.categories.includes(tag))
 
         {filteredPosts.map((post) => 
 			<div class="textitem">
-								<a href={`/blog/${post.slug}/`}>
+								<a href={`/${post.id}/`}>
 									{post.data.title
 										? post.data.title
 										: getTitle(post.id)}

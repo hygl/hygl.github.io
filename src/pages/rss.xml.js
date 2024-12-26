@@ -10,9 +10,9 @@ export async function GET(context) {
 		site: context.site,
 		items: posts.map((post) => ({
 			...post.data,
-			title: post.slug.substring(11,post.slug.lastIndexOf('.')).replaceAll("-"," "),
-			pubDate: new Date(post.slug.substring(0,10)).toString(),
-			link: `/blog/${post.slug}/`,
+			title: post.id.substring(11,post.id.lastIndexOf('.')).replaceAll("-"," "),
+			pubDate: new Date(post.id.substring(0,10)).toString(),
+			link: `/${post.id}/`,
 		})),
 	});
 }
