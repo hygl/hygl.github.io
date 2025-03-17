@@ -1,5 +1,5 @@
 {
-  "name": "hygl.github.io",
+  "name": "hygl.codeberg.page",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^4.0.3",
-    "@astrojs/rss": "^4.0.10",
+    "@astrojs/mdx": "^4.2.0",
+    "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
-    "astro": "^5.1.1",
+    "astro": "^5.5.2",
+    "astro-compressor": "^1.0.0",
+    "dayjs": "^1.11.13",
     "html-to-text": "^9.0.5",
     "markdown-it": "^14.1.0",
     "typescript": "^5.2.2"

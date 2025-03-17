@@ -15,23 +15,28 @@ import Hamburger from "../components/Hamburger.astro";
 		<Hamburger />
 		<Header title={"Über mich"} />
 		<main>
+			<h1>Über diese Seite</h1>
+			<FormattedDate date={new Date(2025, 2, 16)} />
+			<p>
+				Diese Seite rendert Markdown-Dateien als Blogposts. Sie ist
+				meine private Seite und stellt nicht die Meinung anderer oder
+				meines Arbeitgebers da.
+			</p>
 			<h1>Über mich</h1>
-			<FormattedDate date={new Date("12.11.2023")} />
-		
 			<p>
 				Mein Name ist Philipp Hügelmeyer, ich habe an der Universität
 				Osnabrück Computerlinguistik und künstliche Intelligenz,
-				Informatik und Philiosophie studiert und 2002 mit Magister Artium
-				abgeschlossen. Seitdem habe ich unter anderem beim Fraunhofer
-				Insitiut für intelligente Analyse- und Informationssysteme, dem
-				Bundesamt für Sicherheit in der Informatikstechnik und der Uni
-				Osnabrück gearbeitet.
+				Informatik und Philiosophie studiert und 2002 mit Magister
+				Artium abgeschlossen. Seitdem habe ich unter anderem beim
+				Fraunhofer Insitiut für intelligente Analyse- und
+				Informationssysteme, dem Bundesamt für Sicherheit in der
+				Informatikstechnik und der Uni Osnabrück gearbeitet.
 			</p>
 			<p>
 				Seit 2009 bin ich bei der Bundesanstalt für Landwirtschaft und
 				Ernährung als Architekt in der IT tätig.
 			</p>
 		</main>
-		<Footer/>
+		<Footer />
 	</body>
 </html>
